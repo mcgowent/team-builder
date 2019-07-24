@@ -6,7 +6,7 @@ import Form from "./form"
 
 function App() {
   const [team, setTeam] = useState({});
-  const [list, setList] = useState([]);
+  const [list, setList] = useState([{ username: "Tim", email: "email@email.com", role: "Web Stuff" }, { username: "Tim", email: "email@email.com", role: "Web Stuff" }, { username: "Tim", email: "email@email.com", role: "Web Stuff" }]);
 
   function handleChange(event) {
     const updatedTeam = { ...team, [event.target.name]: event.target.value }
@@ -19,9 +19,7 @@ function App() {
 
     const updatedList = [...list, team]
     setList(updatedList)
-
   }
-
 
   return (
     <div className="App">
