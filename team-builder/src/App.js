@@ -7,8 +7,6 @@ function App() {
   const [team, setTeam] = useState({});
   const [list, setList] = useState([]);
 
-
-
   function handleChange(event) {
     const updatedTeam = { ...team, [event.target.name]: event.target.value }
 
@@ -26,11 +24,11 @@ function App() {
     event.preventDefault()
     console.log("TeamList", team);
 
-
     const updatedList = [...list, team]
     setList(updatedList)
-    console.log('This should be an updated List', list)
+    console.log(list)
   }
+
 
   return (
     <div className="App">
@@ -73,7 +71,7 @@ function App() {
       </div>
 
       <div>
-        <TeamList list={list} />
+        {<TeamList list={list} />}
       </div>
     </div>
   );

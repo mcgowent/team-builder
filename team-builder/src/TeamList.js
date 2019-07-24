@@ -1,0 +1,20 @@
+import React from 'react';
+
+const TeamList = ({ list }) => {
+    return (
+        <p className="cards">{list.map(e => {
+            return (
+                <div className="outter-card">
+                    <div className="card">
+                        <h1>Name: {e.username}</h1>
+                        <p>Email: {e.email}</p>
+                        <p>Role: {e.role}</p>
+                    </div>
+                    <button className="button">Edit</button>
+                </div>
+            )
+        })}</p>
+    )
+}
+
+export default TeamList;
