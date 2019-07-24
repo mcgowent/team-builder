@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TeamList = ({ list }) => {
+const TeamList = (props) => {
     return (
-        <p className="cards">{list.map(e => {
+        <p className="cards">{props.list.map(e => {
             return (
                 <div className="outter-card">
                     <div className="card">
