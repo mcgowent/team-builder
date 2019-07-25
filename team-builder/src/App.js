@@ -6,7 +6,7 @@ import Form from "./form"
 
 function App() {
   const [team, setTeam] = useState({});
-  const [list, setList] = useState([{ username: "Tim", email: "email@email.com", role: "Web Stuff" }, { username: "Tim", email: "email@email.com", role: "Web Stuff" }, { username: "Tim", email: "email@email.com", role: "Web Stuff" }]);
+  const [list, setList] = useState([{ username: "Tim", email: "tim@email.com", role: "Web Stuff" }, { username: "Bob", email: "bob@email.com", role: "UX" }, { username: "John", email: "John@email.com", role: "Data" }]);
 
   const [newValue, setNewValue] = useState({});
   const [isEditing, setEditing] = useState(false);
@@ -30,6 +30,7 @@ function App() {
   function handleChange(event) {
     const updatedTeam = { ...team, [event.target.name]: event.target.value }
     setTeam(updatedTeam)
+
   }
 
   function handleSubmit(event) {
@@ -43,6 +44,12 @@ function App() {
       const updatedList = [...list, team]
       setList(updatedList)
     }
+
+  }
+
+
+  function removeItem(name) {
+    setList(list.filter((list) => list.username !== name))
   }
 
   return (
@@ -51,7 +58,7 @@ function App() {
         <Form handleChange={handleChange} handleSubmit={handleSubmit} team={team} />
       </div>
       <div>
-        <TeamList list={list} setNewValue={setNewValue} setEditing={setEditing} />
+        <TeamList list={list} setNewValue={setNewValue} setEditing={setEditing} removeItem={removeItem} />
       </div>
     </div>
   );

@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 
 const Form = (props) => {
-
     return (
-        <form onSubmit={event => props.handleSubmit(event)}>
-            <label>
-                Add New Team Members:<br />
-                <label>Name:</label>
+        <div class="form-style-6">
+            <h1>Add New Team Members</h1>
+            <form className="form" onSubmit={event => props.handleSubmit(event)}>
+
                 <input
                     type="text"
                     id="name"
@@ -16,7 +15,6 @@ const Form = (props) => {
                     value={props.team.username}
                     onChange={props.handleChange}
                 />
-                <br /><label>Email:</label>
 
                 <input
                     type="email"
@@ -26,7 +24,6 @@ const Form = (props) => {
                     value={props.team.email}
                     onChange={props.handleChange}
                 />
-                <br /><label>Team Role:</label>
 
                 <input
                     type="text"
@@ -36,9 +33,9 @@ const Form = (props) => {
                     value={props.team.role}
                     onChange={props.handleChange}
                 />
-            </label>
-            <br /><button>Submit!</button>
-        </form>
+                <button className="button">Submit!</button>
+            </form>
+        </div>
     )
 }
 
