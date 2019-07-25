@@ -10,7 +10,10 @@ const TeamList = (props) => {
                         <p>Email: {e.email}</p>
                         <p>Role: {e.role}</p>
                     </div>
-                    <button className="button">Edit</button>
+                    <button onClick={() => {
+                        props.setNewValue(e);
+                        props.setEditing(true);
+                    }} className="button">Edit</button>
                 </div>
             )
         })}</p>

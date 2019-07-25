@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from "react";
+
 
 const Form = (props) => {
+
     return (
         <form onSubmit={event => props.handleSubmit(event)}>
             <label>
